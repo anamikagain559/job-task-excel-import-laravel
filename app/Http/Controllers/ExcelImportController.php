@@ -44,13 +44,15 @@ class ExcelImportController extends Controller
             // Return the success message and the failed file path to the view
             return back()->with('success', 'Import completed with some errors.')
                          ->with('failed_file', $failedFilePath);
+        }else{
+   // If no failed rows, return success message and fetch the imported data
+   $importedData = UserExcel::all(); // Adjust this to fetch the data after import
+        
+   return back()->with('success', 'Import completed successfully.')
+                ->with('importedData', $importedData);
         }
 
-              // If no failed rows, return success message and fetch the imported data
-              $importedData = UserExcel::all(); // Adjust this to fetch the data after import
-        
-              return back()->with('success', 'Import completed successfully.')
-                           ->with('importedData', $importedData);
+           
       
     }
 
