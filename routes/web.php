@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 Route::get('import', [ExcelImportController::class, 'showImportForm']);
 Route::post('import', [ExcelImportController::class, 'import'])->name('import');
+Route::get('/download-failed-file', [ExcelImportController::class, 'downloadFailedFile'])->name('download-failed-file');
