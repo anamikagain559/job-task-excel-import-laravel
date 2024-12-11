@@ -84,6 +84,5 @@
     @else
         <p>No data has been imported yet.</p>
     @endif
-
 </body>
 </html>
